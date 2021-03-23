@@ -1,38 +1,141 @@
 .App {
-  text-align: center;
+  --bg-color:rgb(233, 233, 233);
+  --bg-color2:#e9e9e9;
+  --bg-color3:#c9c9c9;
+  --text-color: #000;
+  
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.App-dark{
+  --bg-color:#404040;
+  --bg-color2:#363636;
+  --bg-color3:  #4a4a4a;
+  --text-color: #fff;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+
+
+
+#drum-machine {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--bg-color);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+#display {
+  width: 100vw;
+  height: 100vh;
+  background:  var(--bg-color);;
   display: flex;
   flex-direction: column;
-  align-items: center;
+}
+
+.button-container {
+  width: 100%;
+  height: 400px;
+  display: grid;
+  grid-template-columns: repeat(3, 90px);
+  padding: 1rem;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  grid-gap: 10px;
+   
 }
 
-.App-link {
-  color: #61dafb;
+.settings {
+  height: 240px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.drum-pad {
+  width: 90px;
+  height: 90px;
+  border-radius: 20px;
+  background:  var(--bg-color2);;
+  box-shadow: -5px 5px 10px var(--bg-color3), 5px -5px 10px var(--bg-color);
+  color: var(--text-color);
+}
+
+.drum-pad:hover{
+  color: var(--text-color);
+}
+
+.drum-success {
+  border-radius: 20px;
+  background:  var(--bg-color2);;
+  box-shadow: inset -5px 5px 10px var(--bg-color3), inset 5px -5px 10px  var(--bg-color);
+  color: var(--text-color);
+}
+
+.bank {
+  border-radius: 50px;
+  background:  var(--bg-color2);
+  box-shadow: -11px 11px 23px var(--bg-color3), 11px -11px 23px var(--bg-color);
+  color: var(--text-color);
+}
+
+.bank-select {
+  border-radius: 50px;
+  background: var(--bg-color2);
+  box-shadow: -21px 21px 41px var(--bg-color3), 21px -21px 41px var(--bg-color);
+  color: var(--text-color);
+}
+.vol{
+  color: var(--text-color);
+}
+
+.bank-select:active {
+ 
+  border-radius: 50px;
+  background: var(--bg-color2);
+  box-shadow: inset -21px 21px 41px var(--bg-color3), inset 21px -21px 41px var(--bg-color);
+}
+
+@media screen and (min-width: 1024px) {
+  #display {
+    width: 700px;
+    height: 500px;
+    flex-direction: row;
+    
   }
-  to {
-    transform: rotate(360deg);
+  .drum-pad{
+    width: 120px;
   }
+
+  .button-container {
+    height: 100%;
+    width: 65%;
+    grid-gap: 3rem;
+  }
+
+  .settings {
+    
+    width: 35%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 5rem 0;
+  }
+}
+
+.theme{
+  position: relative;
+  top: 90%;
+  left: 50%;
+  transform: translateX(-50px);
+}
+
+
+.theme > button{
+  width: 100px;
+  border: none;
+  outline: none;
+  top: 10px;
+  left: 10px;
+  border-radius: 20px;
+  background:  var(--bg-color2);
+  box-shadow: -11px 11px 23px var(--bg-color3), 11px -11px 23px var(--bg-color);
+  color: var(--text-color);
 }
